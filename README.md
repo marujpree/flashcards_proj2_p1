@@ -6,27 +6,27 @@ Submitted by: **Santiago Reyes*
 
 This web app: **Displays information about the FIFA group stage matches and serves as an information board for people to view details about it*
 
-Time spent: **X** hours spent in total
+Time spent: **4** hours spent in total
 
 ## Required Features
 
 The following **required** functionality is completed:
 
-- [ ] **The app has a cohesive, unique theme for events or resources relevant to a specific community**
+- [ X] **The app has a cohesive, unique theme for events or resources relevant to a specific community**
   - [ ] Header/title describing the theme is displayed
-- [ ] **At least 10 unique events or resources are displayed in a responsive card format**
-  - [ ] There are at least 10 cards displayed for 10 different events 
-  - [ ] The cards should be displayed in an organized format (ex. a grid, or in one line)
-  - [ ] Each card should include some information about the event or resource
+- [ X] **At least 10 unique events or resources are displayed in a responsive card format**
+  - [ X] There are at least 10 cards displayed for 10 different events 
+  - [ X] The cards should be displayed in an organized format (ex. a grid, or in one line)
+  - [ X] Each card should include some information about the event or resource
 
 
 The following **optional** features are implemented:
 
-- [ ] Buttons or links to a related resources are on each card component
-  - [ ] All cards have buttons or links in addition to text
-- [ ] The site is responsive for both desktop and mobile formats
-  - [ ] Web app is shown in a mobile format
-  - [ ] **Video Walkthrough Special Instructions**: To ease the grading process, please use Chrome Developer Tools' "Toggle Device" button to demonstrate that your web application's responsiveness in both a desktop *and* a mobile format. Detailed instructions can be found below this stretch feature on the project page. 
+- [X ] Buttons or links to a related resources are on each card component
+  - [ X] All cards have buttons or links in addition to text
+- [X ] The site is responsive for both desktop and mobile formats
+  - [X ] Web app is shown in a mobile format
+  - [ X] **Video Walkthrough Special Instructions**: To ease the grading process, please use Chrome Developer Tools' "Toggle Device" button to demonstrate that your web application's responsiveness in both a desktop *and* a mobile format. Detailed instructions can be found below this stretch feature on the project page. 
 
 The following **additional** features are implemented:
 
