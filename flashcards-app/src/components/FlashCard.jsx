@@ -1,18 +1,11 @@
-import { useState, useEffect } from 'react';
 import './FlashCard.css';
 
-function FlashCard({ card }) {
-  const [isFlipped, setIsFlipped] = useState(false);
-
-  useEffect(() => {
-    setIsFlipped(false);
-  }, [card]);
-
+function FlashCard({ card, isFlipped, onFlip }) {
   return (
     <div
       className="flashcard-scene"
       data-difficulty={card.difficulty}
-      onClick={() => setIsFlipped(f => !f)}
+      onClick={onFlip}
       role="button"
       aria-label="Flag card — click to flip"
       aria-pressed={isFlipped}

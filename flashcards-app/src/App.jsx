@@ -5,12 +5,14 @@ import './App.css';
 
 function App() {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFlipped, setIsFlipped] = useState(false);
 
   function handleNext() {
     let nextIndex;
     do {
       nextIndex = Math.floor(Math.random() * cards.length);
     } while (nextIndex === currentIndex);
+    setIsFlipped(false);
     setCurrentIndex(nextIndex);
   }
 
@@ -24,7 +26,7 @@ function App() {
         <p className="app-count">Number of cards: {cards.length}</p>
       </header>
       <main className="app-main">
-        <FlashCard card={cards[currentIndex]} />
+        <FlashCard key={currentIndex} card={cards[currentIndex]} isFlipped={isFlipped} onFlip={() => setIsFlipped(f => !f)} />
         <p className="card-hint">Click the card to reveal the country name</p>
         <button type="button" className="btn-next" onClick={handleNext}>
           Next →
