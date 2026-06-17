@@ -1,0 +1,107 @@
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex: 1;
+}
+
+/* ── FIFA 2026 inspired stripe header ── */
+.app-header {
+  width: 100%;
+  padding: 56px 20px 52px;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  background: repeating-linear-gradient(
+    -55deg,
+    #e8001b  0px,  #e8001b  30px,
+    #f7941d  30px, #f7941d  60px,
+    #ffd100  60px, #ffd100  90px,
+    #00a651  90px, #00a651  120px,
+    #003da5  120px, #003da5  150px,
+    #7b2d8b  150px, #7b2d8b  180px,
+    #00b5ad  180px, #00b5ad  210px
+  );
+}
+
+/* Dark overlay so white text stays readable */
+.app-header::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 8, 28, 0.58);
+  pointer-events: none;
+}
+
+/* Lift content above the overlay */
+.app-header > * {
+  position: relative;
+  z-index: 1;
+}
+
+.app-header h1 {
+  color: #fff;
+  letter-spacing: -2px;
+  text-shadow: 0 2px 16px rgba(0, 0, 0, 0.5);
+  margin: 0 0 10px;
+}
+
+.app-description {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.88);
+  margin-top: 0;
+}
+
+.app-count {
+  font-size: 0.875rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 10px;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+/* ── Card area ── */
+.app-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  padding: 44px 20px 60px;
+}
+
+.card-hint {
+  font-size: 0.85rem;
+  color: var(--text);
+  opacity: 0.55;
+}
+
+/* ── Next button ── */
+.btn-next {
+  font-size: 1rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  padding: 11px 40px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+  letter-spacing: 0.2px;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.1s;
+  margin-top: 4px;
+}
+
+.btn-next:hover {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-next:active {
+  transform: scale(0.97);
+}
+
+.btn-next:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}

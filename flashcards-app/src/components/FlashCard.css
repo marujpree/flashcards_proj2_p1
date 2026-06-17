@@ -1,0 +1,108 @@
+.flashcard-scene {
+  width: 400px;
+  max-width: calc(100vw - 40px);
+  height: 270px;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.flashcard {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.55s ease;
+}
+
+.flashcard.is-flipped {
+  transform: rotateY(180deg);
+}
+
+.flashcard__face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--border);
+  overflow: hidden;
+}
+
+.flashcard__face--front {
+  background: var(--bg);
+}
+
+.flashcard__face--front img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.flashcard__face--back {
+  transform: rotateY(180deg);
+  flex-direction: column;
+  gap: 14px;
+  background: rgba(0, 0, 0, 0.04);
+}
+
+.country-name {
+  font-size: 1.75rem;
+  font-weight: 600;
+  color: var(--text-h);
+  letter-spacing: -0.5px;
+  font-family: var(--heading);
+}
+
+.difficulty-badge {
+  font-size: 0.75rem;
+  padding: 3px 12px;
+  border-radius: 999px;
+  font-family: var(--sans);
+  letter-spacing: 0.4px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+/* Difficulty color themes — slightly transparent backgrounds */
+[data-difficulty="Easy"] .flashcard__face--back {
+  background: rgba(34, 197, 94, 0.12);
+}
+[data-difficulty="Easy"] .difficulty-badge {
+  background: rgba(34, 197, 94, 0.2);
+  color: #166534;
+}
+
+[data-difficulty="Medium"] .flashcard__face--back {
+  background: rgba(234, 179, 8, 0.12);
+}
+[data-difficulty="Medium"] .difficulty-badge {
+  background: rgba(234, 179, 8, 0.2);
+  color: #854d0e;
+}
+
+[data-difficulty="Hard"] .flashcard__face--back {
+  background: rgba(239, 68, 68, 0.12);
+}
+[data-difficulty="Hard"] .difficulty-badge {
+  background: rgba(239, 68, 68, 0.2);
+  color: #991b1b;
+}
+
+/* Hover tilt on front face */
+.flashcard-scene:hover .flashcard:not(.is-flipped) {
+  transform: rotateY(6deg);
+}
+
+@media (prefers-color-scheme: dark) {
+  [data-difficulty="Easy"] .flashcard__face--back   { background: rgba(34, 197, 94, 0.1); }
+  [data-difficulty="Easy"] .difficulty-badge        { background: rgba(34, 197, 94, 0.18); color: #4ade80; }
+  [data-difficulty="Medium"] .flashcard__face--back { background: rgba(234, 179, 8, 0.1); }
+  [data-difficulty="Medium"] .difficulty-badge      { background: rgba(234, 179, 8, 0.18); color: #fbbf24; }
+  [data-difficulty="Hard"] .flashcard__face--back   { background: rgba(239, 68, 68, 0.1); }
+  [data-difficulty="Hard"] .difficulty-badge        { background: rgba(239, 68, 68, 0.18); color: #f87171; }
+}
