@@ -50,7 +50,7 @@ Here's a walkthrough of implemented user stories:
 
 ## Notes
 
-Describe any challenges encountered while building the app.
+One challenge was fixing a visual glitch where clicking Next while a card was flipped would briefly reveal the back of the next card before it snapped to the front. The issue stemmed from React updating both the card content and flip state in the same render while the CSS transition was still playing. I resolved it by disabling the flip transition for a single animation frame on navigation, making the card snap instantly to the front.
 
 ## License
 
