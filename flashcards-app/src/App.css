@@ -5,7 +5,6 @@
   flex: 1;
 }
 
-/* ── FIFA 2026 inspired stripe header ── */
 .app-header {
   width: 100%;
   padding: 56px 20px 52px;
@@ -24,7 +23,6 @@
   );
 }
 
-/* Dark overlay so white text stays readable */
 .app-header::after {
   content: '';
   position: absolute;
@@ -33,7 +31,6 @@
   pointer-events: none;
 }
 
-/* Lift content above the overlay */
 .app-header > * {
   position: relative;
   z-index: 1;
@@ -60,48 +57,168 @@
   letter-spacing: 0.3px;
 }
 
-/* ── Card area ── */
 .app-main {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 20px;
-  padding: 44px 20px 60px;
+  gap: 18px;
+  padding: 36px 20px 60px;
 }
 
-.card-hint {
-  font-size: 0.85rem;
+.streak-bar {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--text-h);
+}
+
+.streak-current {
+  color: var(--accent);
+}
+
+.streak-best {
   color: var(--text);
-  opacity: 0.55;
+  opacity: 0.75;
 }
 
-/* ── Next button ── */
-.btn-next {
-  font-size: 1rem;
+.guess-form {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+  max-width: 540px;
+}
+
+.guess-input {
+  flex: 1;
+  padding: 11px 16px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: var(--bg);
+  color: var(--text-h);
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  outline: none;
+  transition: border-color 0.18s;
+}
+
+.guess-input:focus {
+  border-color: var(--accent-border);
+}
+
+.guess-input--correct {
+  border-color: #22c55e;
+  background: rgba(34, 197, 94, 0.06);
+}
+
+.guess-input--incorrect {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.06);
+}
+
+.guess-input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.btn-submit {
+  font-size: 0.95rem;
   font-family: var(--sans);
   font-weight: 600;
-  padding: 11px 40px;
+  padding: 11px 28px;
   border-radius: 8px;
   border: 2px solid var(--accent-border);
   background: var(--accent-bg);
   color: var(--accent);
   cursor: pointer;
-  letter-spacing: 0.2px;
-  transition: background 0.18s, border-color 0.18s, color 0.18s, transform 0.1s;
-  margin-top: 4px;
+  transition: background 0.18s, border-color 0.18s, color 0.18s;
+  white-space: nowrap;
 }
 
-.btn-next:hover {
+.btn-submit:hover:not(:disabled) {
   background: var(--accent);
   color: #fff;
   border-color: var(--accent);
 }
 
-.btn-next:active {
-  transform: scale(0.97);
+.btn-submit:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
 }
 
-.btn-next:focus-visible {
-  outline: 2px solid var(--accent);
-  outline-offset: 3px;
+.feedback {
+  font-size: 0.95rem;
+  font-weight: 600;
+  padding: 8px 20px;
+  border-radius: 8px;
+}
+
+.feedback--correct {
+  color: #166534;
+  background: rgba(34, 197, 94, 0.15);
+}
+
+.feedback--incorrect {
+  color: #991b1b;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+@media (prefers-color-scheme: dark) {
+  .feedback--correct  { color: #4ade80; background: rgba(34, 197, 94, 0.15); }
+  .feedback--incorrect { color: #f87171; background: rgba(239, 68, 68, 0.15); }
+}
+
+.nav-row {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-top: 4px;
+}
+
+.btn-nav {
+  font-size: 0.95rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  padding: 10px 28px;
+  border-radius: 8px;
+  border: 2px solid var(--accent-border);
+  background: var(--accent-bg);
+  color: var(--accent);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s, color 0.18s, opacity 0.18s;
+}
+
+.btn-nav:hover:not(:disabled) {
+  background: var(--accent);
+  color: #fff;
+  border-color: var(--accent);
+}
+
+.btn-nav:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+}
+
+.btn-shuffle {
+  font-size: 0.875rem;
+  font-family: var(--sans);
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 8px;
+  border: 2px solid var(--border);
+  background: transparent;
+  color: var(--text);
+  cursor: pointer;
+  transition: background 0.18s, border-color 0.18s;
+}
+
+.btn-shuffle:hover {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: var(--text);
+}
+
+@media (prefers-color-scheme: dark) {
+  .btn-shuffle:hover {
+    background: rgba(255, 255, 255, 0.07);
+  }
 }
